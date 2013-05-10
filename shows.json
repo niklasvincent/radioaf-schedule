@@ -1,0 +1,28 @@
+{
+    "Snooze": {
+        "url": "http://radioaf.se/program/snooze/",
+        "airs": [
+            {
+                "day": 1,
+                "start": "07:00",
+                "end": "12:00"
+            },
+            {
+                "day": 2,
+                "start": "09:00",
+                "end": "11:00"
+            },
+			{
+				"day": 3,
+				"start": "07:00",
+				"end": "11:00"
+			}
+        ]
+    },
+   "Min bästa idé": {
+		"url": "http://radioaf.se/program/minbastaide/",
+		"airs": [
+			{"day": 5, "start": "19:00", "end": "20:00"}
+		]
+	}
+}
