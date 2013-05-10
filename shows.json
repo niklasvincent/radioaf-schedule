@@ -28,5 +28,15 @@
                 "end": "20:00"
             }
         ]
-    }
+    },
+	"Studio 3": {
+		"url": "http://radioaf.se/program/studio-3/",
+		"airs": [
+			{
+				"day": 5,
+				"start": "13:00",
+				"end": "15:00"
+			}
+		]
+	}
 }
