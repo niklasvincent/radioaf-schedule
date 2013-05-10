@@ -1,6 +1,9 @@
 function renderTable() {
 	var monday = getMonday(new Date());
+	var now = new Date();
 	var y = monday.getYear();
+	var defaultColor = '#378006';
+	var currentShowColor = 'red';
 
 	$('#calendar').fullCalendar({
 		header: {
@@ -38,12 +41,21 @@ function renderTable() {
 	$.getJSON('shows.json', function(shows) {
 		$.each(shows, function(name, data) {
 			$.each(data.airs, function(index, when) {
+				var start = calculateDate(monday, when.day, when.start);
+				var end = calculateDate(monday, when.day, when.end);
+				var color = defaultColor;
+				if ( now.getDay() == when.day ) {
+					if ( start.getTime() < now.getTime()  && now.getTime() < end.getTime() ) {
+						color = currentShowColor;
+					}
+				}
 				var newShow = {
 					title: name,
-					start: calculateDate(monday, when.day, when.start),
-					end: calculateDate(monday, when.day, when.end),
+					start: start,
+					end: end,
 					allDay: false,
-					url: data.url
+					url: data.url,
+					backgroundColor: color
 				};
 				$("#calendar").fullCalendar( 'renderEvent', newShow, true);
 			});
